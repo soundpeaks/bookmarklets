@@ -12,7 +12,7 @@ function loadAfter$() {
 	var videos = new Array();
 	var elements = new Array();
 	elements = $('ytd-grid-video-renderer').each(function(){
-	  var url = $(this).find('[id=\'thumbnail\'][rel=\'null\']').attr('href').replace('/watch?v=', '').split('&')[0];
+	  var url = $(this).find('[id=\'thumbnail\'][rel=\'null\']').attr('href').replace('/watch?v=', '').replace('/shorts/', '').split('&')[0];
 	  var views = $(this).find('span[class=\'style-scope ytd-grid-video-renderer\']').first().text();
 	  
 	  views = views.replace(' views', '');
@@ -32,6 +32,7 @@ function loadAfter$() {
 		//console.log(videos[i]['v']);
 		str = str + videos[i]['u'] + ',';
 	}
+	alert(str);
 	window.location = str;
 }
 
